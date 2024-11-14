@@ -1,20 +1,38 @@
 #include "stdio.h"
 #include <stdio.h>
 #include <stdlib.h>
-
-// int main() {
-//   char *f;
-//   f = malloc(11);
-//   mprintf("input f: ");
-//   mscanf(f);
-//   printf("printf: %s", f);
-//   mprintf(f);
-//   printf("%d \n", foo(6, 1, 2, 3, 4, 0, 5));
-//   printf("%d \n", op("sum", 6, 1, 2, 3, 4, 0, 5));
-//   return 0;
-// }
+#include <string.h>
 
 
+int foo(int count, ...) {
+  int sum = 0;
+  va_list args;
+  va_start(args, count);
+  for (int i = 0; i < count; ++i) {
+    int num = va_arg(args, int);
+    sum += num;
+  }
+  va_end(args);
+  return sum;
+}
+
+int op(const char *o, ...) {
+  va_list args;
+  va_start(args, o);
+  int count;
+  if (strcmp(o, "sum") != 0) {
+    return -1;
+  }
+  count = va_arg(args, int);
+  int sum = 0;
+  int x;
+  for (int i = 0; i < count; i++) {
+    x = va_arg(args, int);
+    sum += x;
+  }
+
+  return sum;
+}
 int main() {
   char a;
   int b, c;

@@ -20,5 +20,3 @@ int      scanf(const char *restrict, ...);
 
 int mscanf(const char *, ...);
 int mprintf(const char *, ...);
-int foo(const int, ...);
-int op(const char *, ...);
