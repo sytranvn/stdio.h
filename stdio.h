@@ -18,7 +18,7 @@ int      rename(const char *, const char *);
 int      scanf(const char *restrict, ...);
 // TODO: END
 
-int mscanf(char *f);
+int mscanf(const char *, ...);
 int mprintf(const char *, ...);
 int foo(const int, ...);
 int op(const char *, ...);
